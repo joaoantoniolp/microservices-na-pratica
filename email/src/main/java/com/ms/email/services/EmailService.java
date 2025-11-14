@@ -33,6 +33,7 @@ public class EmailService {
             emailModel.setEmailFrom(emailFrom);
 
             SimpleMailMessage message = new SimpleMailMessage();
+            message.setFrom(emailModel.getEmailFrom());
             message.setTo(emailModel.getEmailTo());
             message.setSubject(emailModel.getSubject());
             message.setText(emailModel.getText());
@@ -45,5 +46,4 @@ public class EmailService {
             return emailRepository.save(emailModel);
         }
     }
-
 }
